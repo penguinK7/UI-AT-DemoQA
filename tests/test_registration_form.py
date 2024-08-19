@@ -1,5 +1,7 @@
 from selenium import webdriver
 from pages.registration_page import RegistrationPage
+from config import RESOURCES_DIR
+import os
 
 
 class TestRegistration:
@@ -15,6 +17,7 @@ class TestRegistration:
         driver.get("https://demoqa.com/automation-practice-form")
 
         registration_page = RegistrationPage(driver)
+        image_path = os.path.join(RESOURCES_DIR, 'lcvVBfIX-fo.jpg')
 
         # Пример заполнения формы
         registration_page.fill_form(
@@ -26,6 +29,6 @@ class TestRegistration:
             # date_of_birth="01 Jan 2000",
             subjects="Maths",
             hobbies=["Reading", "Sports"],
-            image_path="/Users/user/Dev/UI-AT-DemoQA/resources/lcvVBfIX-fo.jpg",  
+            image_path=image_path,  
             current_address="123 Main St"
         )
